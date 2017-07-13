@@ -1,4 +1,5 @@
 @import 'common/variables';
+@import '_libs/jeet/index';
 @import 'common/mixins';
 @import 'common/fonts';
 @import 'common/base';
@@ -9,43 +10,120 @@
   @include retina-sprite($abiatec-group);
 } */
 
-.block1{
-	width: 100px;
-	height: 100px;
-	background-color: #000;
-	@include wide() {
-		background-color:#66ff66;
-	}
-	@include desktop() {
-		background-color:#ff6666;
-	}
-	@include tablet() {
-		background-color:#ffb366;
-	}
-	@include mobile() {
-		background-color:#ffff66;
-	}
-	@include iphone() {
-		background-color:#66ffff;
-	}
+
+$jeet: ( 
+ gutter: 2.1875,
+ max-width: 1280px,
+ layout-direction: LTR, 
+ parent-first: false
+ );
+@include debug(gray, false);
+.container {
+    @include center(1280px);
+    * {
+        box-sizing: border-box;
+    }
 }
-.block2{
-	width: 100px;
-	height: 100px;
-	background-color: #668cff;
-	@include wide() {
-		background-color:#6666ff;
-	}
-	@include desktop() {
-		background-color:#d966ff;
-	}
-	@include tablet() {
-		background-color:#ff6666;
-	}
-	@include mobile() {
-		background-color:#66ffb3;
-	}
-	@include iphone() {
-		background-color:#ffd966;
-	}
+
+.aside {
+    @include column(2/12);
+    min-height: 700px;
+    background-color: lightgreen;
+    @include tablet() {
+        @include span(1);
+    }
+}
+
+.main {
+    @include column(10/12, $cycle: 2);
+    min-height: 700px;
+    @include tablet() {
+        @include span(1);
+    }
+}
+
+.model {
+    @include center(1062px);
+    margin-bottom: 10px;
+}
+
+.image {
+    @include column(3/10);
+    min-height: 200px;
+    background: pink;
+    @include desktop() {
+        @include column(5/10);
+    }
+    @include mobile() {
+    		@include stack();
+    }
+}
+
+.desk {
+    @include column(5/10);
+    min-height: 200px;
+    background: lightblue;
+    @include desktop() {
+        @include column(5/10, $cycle: 2);
+    }
+    @include mobile() {
+    		@include stack();
+    }
+}
+
+.buttons {
+	position: relative;
+    @include column(2/10, $cycle: 3);
+    min-height: 200px;
+     background: lightyellow;
+    @include desktop() {
+        @include column(5/10, $cycle: 2);
+    }
+    @include mobile() {
+    		@include stack();
+    }
+}
+.button{
+	@include align();
+}
+.block1 {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    @include wide() {
+        background-color: #66ff66;
+    }
+    @include desktop() {
+        background-color: #ff6666;
+    }
+    @include tablet() {
+        background-color: #ffb366;
+    }
+    @include mobile() {
+        background-color: #ffff66;
+    }
+    @include iphone() {
+        background-color: #66ffff;
+    }
+}
+
+.block2 {
+    width: 100px;
+    height: 100px;
+    background-color: #668cff;
+    @include wide() {
+        background-color: #6666ff;
+    }
+    @include desktop() {
+        background-color: #d966ff;
+    }
+    @include tablet() {
+        background-color: #ff6666;
+    }
+    @include mobile() {
+        background-color: #66ffb3;
+    }
+    @include iphone() {
+        background-color: #ffd966;
+    }
 }
