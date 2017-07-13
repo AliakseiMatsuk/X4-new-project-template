@@ -11,7 +11,6 @@ global.$ = {
   gp: require('gulp-load-plugins')(),
   path: {
       task: require('./gulp/paths/tasks.js'),
-      jsFoundation: require('./gulp/paths/js.foundation.js'),
       cssFoundation: require('./gulp/paths/css.foundation.js'),
       app: require('./gulp/paths/app.js')
   }
@@ -31,12 +30,12 @@ $.gulp.task('default', $.gulp.series(
     'pug',
     'sass',
     'css:foundation',
-    'js:foundation',
     'js:process'
   ),
   $.gulp.parallel(
     'copy:image',
-    'copy:fonts'
+    'copy:fonts',
+    'copy:jsLibs'
   ),
   $.gulp.parallel(
     'watch',

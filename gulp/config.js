@@ -2,7 +2,8 @@ module.exports = {
     root: './build',
     source: {
         html: './source/template/pages/*.pug',
-        js: './source/js/main.js',
+        js: './source/js/app.js',
+        jsLibs: './source/js/_libs/**/*.*',
         css: './source/style/app.scss',
         img: './source/images/**/*.*',
         fonts: './source/fonts/**/*.*',
@@ -14,6 +15,7 @@ module.exports = {
     build: {
         html: './build',
         js: './build/templates/_ares/js',
+        jsLibs: './build/templates/_ares/js/libs',
         css: './build/templates/_ares/css',
         img: './build/templates/_ares/images',
         fonts: './build/templates/_ares/fonts',
@@ -23,6 +25,7 @@ module.exports = {
     watch: {
         html: './source/template/**/*.pug',
         js: './source/js/**/*.js',
+        jsLibs: './source/js/_libs/**/*.js',
         css: './source/style/**/*.scss',
         img: './source/images/**/*.*',
         fonts: './source/fonts/**/*.*',
