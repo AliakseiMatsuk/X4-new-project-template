@@ -12,7 +12,7 @@
 
 
 $jeet: ( 
- gutter: 2.1875,
+ gutter:0,
  max-width: 1280px,
  layout-direction: LTR, 
  parent-first: false
@@ -125,5 +125,71 @@ $jeet: (
     }
     @include iphone() {
         background-color: #ffd966;
+    }
+}
+.grid{
+   margin:0 auto;
+   max-width: 1280px;
+}
+.grid-sizer{
+    @include span(1/12);
+}
+.grid__item {
+    position: relative;
+    height: 200px;
+    &:after{
+        @include align();
+    }
+    &_width-1 {
+        @include span(2/12);
+        background-color: #ffff66;
+        &:after{
+            content: '2/12';
+        }
+        @include tablet() {
+            @include span(3/12);
+            &:after{
+                content: '3/12';
+            }
+        }
+    }
+    &_width-2 {
+        @include span(3/12);
+        background-color: #6666ff;
+        &:after{
+            content: '3/12';
+        }
+        @include tablet() {
+            @include span(4/12);
+            &:after{
+                content: '4/12';
+            }
+        }
+    }
+    &_width-3 {
+        @include span(4/12);
+        background-color: #d966ff;
+        &:after{
+            content: '4/12';
+        }
+        @include tablet() {
+            @include span(6/12);
+            &:after{
+                content: '6/12';
+            }
+        }
+    }
+    &_width-4 {
+        @include span(6/12);
+        &:after{
+            content: '6/12';
+        }
+        background-color: #66ffb3;
+        @include tablet() {
+            @include span(12/12);
+            &:after{
+                content: '12/12';
+            }
+        }
     }
 }
