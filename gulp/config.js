@@ -30,7 +30,8 @@ module.exports = {
         img: './source/images/**/*.*',
         fonts: './source/fonts/**/*.*',
         spriteImg: './source/sprite/**/*.+(png|gif|jpg|jpeg|PNG|JPG|JPEG)',
-        spriteSvg: './source/sprite/**/*.svg'
+        spriteSvg: './source/sprite/**/*.svg',
+        content:'./data/**/*.json'
     },
     autoprefixerConfig: ['last 3 version', '> 1%']
 };

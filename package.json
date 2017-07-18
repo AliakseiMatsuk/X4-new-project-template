@@ -1,5 +1,5 @@
 {
-  "name": "loftschool-builder",
+  "name": "X4-new-project-template",
   "devDependencies": {
     "browser-sync": "~2.18.7",
     "del": "~3.0.0",
@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "normalize.css": "~7.0.0",
-    "jquery": "~3.2.1"
+    "svg4everybody": "^2.1.8"
   }
 }

@@ -9,6 +9,7 @@ global.$ = {
   merge:require('merge-stream'),
   browserSync: require('browser-sync').create(),
   gp: require('gulp-load-plugins')(),
+  fs: require('fs'),
   path: {
       task: require('./gulp/paths/tasks.js'),
       cssFoundation: require('./gulp/paths/css.foundation.js'),

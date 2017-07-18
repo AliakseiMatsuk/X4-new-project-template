@@ -3,6 +3,7 @@
 module.exports = function() {
     $.gulp.task('watch', function() {
         $.gulp.watch($.config.watch.html, $.gulp.series('pug'));
+        $.gulp.watch($.config.watch.content, $.gulp.series('pug'));
         $.gulp.watch($.config.watch.css, $.gulp.series('sass'));
         $.gulp.watch($.config.watch.fonts, $.gulp.series('copy:fonts'));
         $.gulp.watch($.config.watch.img, $.gulp.series('copy:image'));

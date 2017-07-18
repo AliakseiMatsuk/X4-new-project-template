@@ -6,44 +6,6 @@ block variables
 block content
 	//- INCLUDE BLOCKS
 	//-	include ../blocks/..
-
-	//- PASTE SVG
-	//- svg
-	//- 	use(xlink:href=`${svgPath}#arrow`)
-
-
-	//- .block1
-	//- .block2
-
-	//- .container
-	//- 	.aside
-	//- 	.main
-	//- 		.content
-	//- 			.model
-	//- 				.image
-	//- 				.desk
-	//- 				.buttons
-	//- 					.button 1
-	//- 			.model
-	//- 				.image
-	//- 				.desk
-	//- 				.buttons
-	//- 					.button 2
-	//- 			.model
-	//- 				.image
-	//- 				.desk
-	//- 				.buttons
-	//- 					.button 3
-	//- 			.model
-	//- 				.image
-	//- 				.desk
-	//- 				.buttons
-	//- 					.button 4
-	//- 			.model
-	//- 				.image
-	//- 				.desk
-	//- 				.buttons
-	//- 					.button 5
 	.grid
 		.grid-sizer
 		.grid__item.grid__item_width-1
@@ -61,3 +23,11 @@ block content
 		.grid__item.grid__item_width-3
 		.grid__item.grid__item_width-4
 		.grid__item.grid__item_width-4
+	+icon('vk','social__link')
+	+icon('twitter','social__link')
+	ul.nav
+		each link,title in nav.navPages
+			li.nav__item
+				a.nav__link(href=`${link}`) #{title}
+	.block1
+	.block2
