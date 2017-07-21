@@ -1,0 +1,6 @@
+ul.social
+	each social in socials
+		each item in social
+			li.social__item
+				a.social__link(href=`${item.link}` class=`social__link_${item.class}` title=`${item.title}` target="_blank") #{item.title}
+					+social(`${item.class}`)

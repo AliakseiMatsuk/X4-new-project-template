@@ -151,6 +151,12 @@ $jeet: (
                 content: '3/12';
             }
         }
+        @include mobile() {
+        @include span(4/12);
+        &:after{
+            content: '4/12';
+        }
+    }
     }
     &_width-2 {
         @include span(3/12);
@@ -159,6 +165,12 @@ $jeet: (
             content: '3/12';
         }
         @include tablet() {
+            @include span(4/12);
+            &:after{
+                content: '4/12';
+            }
+        }
+         @include mobile() {
             @include span(4/12);
             &:after{
                 content: '4/12';
@@ -177,6 +189,12 @@ $jeet: (
                 content: '6/12';
             }
         }
+         @include mobile() {
+            @include span(8/12);
+            &:after{
+                content: '8/12';
+            }
+        }
     }
     &_width-4 {
         @include span(6/12);
@@ -190,5 +208,36 @@ $jeet: (
                 content: '12/12';
             }
         }
+         @include mobile() {
+            @include span(4/12);
+            &:after{
+                content: '4/12';
+            }
+        }
     }
   }
+
+
+
+ .social {
+     $_socials: ( 
+     facebook: fb,
+     vk: vk,
+     twitter: tw,
+     youtube: yt,
+     instagram:insta,
+     ok:ok
+     );
+     &__item {}
+     &__link {
+         @each $icon,
+         $label in $_socials {
+             &_#{$label} {
+                 &:after {
+                     content: '#{$icon}';
+                 }
+             }
+         }
+     }
+ }
+ 

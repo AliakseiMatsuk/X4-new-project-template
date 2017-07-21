@@ -1,0 +1,38 @@
+{
+    "facebook": [
+    {
+        "link": "facebook.com",
+        "title": "facebook",
+        "class": "fb"
+    }],
+    "vk": [
+    {
+        "link": "vk.com",
+        "title": "vk",
+        "class": "vk"
+    }],
+    "twitter": [
+    {
+        "link": "twitter.com",
+        "title": "twitter",
+        "class": "tw"
+    }],
+    "youtube": [
+    {
+        "link": "youtube.com",
+        "title": "youtube",
+        "class": "yt"
+    }],
+    "instagram": [
+    {
+        "link": "instagram.com",
+        "title": "instagram",
+        "class": "insta"
+    }],
+    "ok": [
+    {
+        "link": "ok.com",
+        "title": "ok",
+        "class": "ok"
+    }]
+}

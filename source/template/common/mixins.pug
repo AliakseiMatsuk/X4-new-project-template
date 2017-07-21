@@ -2,3 +2,11 @@ mixin icon(name,mod)
 	- mod = mod || ''
 	svg(class="icon icon-" + name + ' ' + mod)
 		use(xlink:href=`${svgPath}#` + name)
+
+
+
+
+mixin social(name,mod)
+	- mod = mod || ''
+	svg(class=`social__pic social__pic_${name} ${mod}`)
+		use(xlink:href=`${svgPath}#` + name)

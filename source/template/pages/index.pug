@@ -1,11 +1,11 @@
 extends ../_template
 
 block variables
-	- var title = ['index page Title','index page description','index page keywords']
+	- var title = ['index page title','index page description','index page keywords']
 
 block content
 	//- INCLUDE BLOCKS
-	//-	include ../blocks/..
+	//- 	include ../blocks/..
 	.grid
 		.grid-sizer
 		.grid__item.grid__item_width-1
@@ -31,3 +31,4 @@ block content
 				a.nav__link(href=`${link}`) #{title}
 	.block1
 	.block2
+	include ../blocks/social
