@@ -240,4 +240,22 @@ $jeet: (
          }
      }
  }
+:root {
+    color:;
+   --main-color: pink;
+}
+.custom-propirties {
  
+}
+
+.custom-properties__item_1 {
+    --main-color:tomato;
+    color: var(--main-color);
+    button{
+        border-color:var(--main-color);
+    }
+}
+
+.custom-properties__item_2 {
+    background-color: var(--main-color);
+}

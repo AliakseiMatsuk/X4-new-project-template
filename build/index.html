@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>index page title</title>
+    <meta content="index page description" name="description">
+    <meta content="index page keywords" name="keywords">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <!-- Schema.org markup for Google+-->
+    <meta itemprop="name" content="index page title">
+    <meta itemprop="description" content="index page description">
+    <meta itemprop="image" content="http://www.example.com/image.jpg">
+    <!-- Twitter Card data-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="index page title">
+    <meta name="twitter:description" content="index page description">
+    <meta name="twitter:creator" content="@author_handle">
+    <!-- Twitter summary card with large image must be at least 280x150px-->
+    <meta name="twitter:image:src" content="http://www.example.com/image.jpg">
+    <!-- Open Graph data-->
+    <meta property="og:title" content="index page title">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://www.example.com/">
+    <meta property="og:image" content="http://example.com/image.jpg">
+    <meta property="og:description" content="index page description">
+    <meta property="og:site_name" content="Site Name, i.e. Moz">
+    <meta property="article:published_time" content="2013-09-17T05:59:00+01:00">
+    <meta property="article:modified_time" content="2013-09-16T19:08:47+01:00">
+    <meta property="article:section" content="Article Section">
+    <meta property="article:tag" content="Article Tag">
+    <meta property="fb:admins" content="Facebook numberic ID">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="templates/_ares/css/foundation.css">
+    <link rel="stylesheet" href="templates/_ares/css/app.css"><!--[if lt IE 9]>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!--.grid
+    .grid-sizer
+    .grid__item.grid__item_width-1
+    .grid__item.grid__item_width-1
+    .grid__item.grid__item_width-1
+    .grid__item.grid__item_width-1
+    .grid__item.grid__item_width-1
+    .grid__item.grid__item_width-1
+    .grid__item.grid__item_width-2
+    .grid__item.grid__item_width-2
+    .grid__item.grid__item_width-2
+    .grid__item.grid__item_width-2
+    .grid__item.grid__item_width-3
+    .grid__item.grid__item_width-3
+    .grid__item.grid__item_width-3
+    .grid__item.grid__item_width-4
+    .grid__item.grid__item_width-4
+    -->
+    <!--+icon('vk','social__link')-->
+    <!--+icon('twitter','social__link')-->
+    <!--ul.nav
+    each link,title in nav.navPages
+    	li.nav__item
+    		a.nav__link(href=`${link}`) index page title,index page description,index page keywords
+    -->
+    <!--.block1-->
+    <!--.block2-->
+    <!--include ../blocks/social-->
+    <div class="custom-properties">
+      <div class="custom-properties__item custom-properties__item_1">lorem
+        <button>test</button>
+      </div>
+      <div class="custom-properties__item custom-properties__item_2">lorem1
+        <button>test</button>
+      </div>
+    </div>
+    <script>
+      const elem = document.querySelector('.custom-properties__item_2');
+      const styles = getComputedStyle(document.querySelector('.custom-properties__item_1'));
+      // Чтение свойства. Не забыть убрать пробелы с помощью trim()
+      const oldColor = styles.getPropertyValue('--main-color').trim();
+      console.log(oldColor);
+      // Запись свойства. 
+      elem.style.setProperty('--main-color', 'green');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="templates/_ares/js/libs/maskedinput.min.js"></script>
+    <script src="templates/_ares/js/libs/validationEngine.min.js"></script>
+    <script src="templates/_ares/js/libs/validationRulesRu.js"></script>
+    <script src="templates/_ares/js/libs/masonry.pkgd.min.js"></script>
+    <script src="templates/_ares/js/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="templates/_ares/js/libs/svg4everybody.legacy.min.js"></script>
+    <script src="templates/_ares/js/app.js"></script>
+  </body>
+</html>

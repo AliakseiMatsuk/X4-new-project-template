@@ -6,7 +6,7 @@ block variables
 block content
 	//- INCLUDE BLOCKS
 	//- 	include ../blocks/..
-	.grid
+	//.grid
 		.grid-sizer
 		.grid__item.grid__item_width-1
 		.grid__item.grid__item_width-1
@@ -23,12 +23,28 @@ block content
 		.grid__item.grid__item_width-3
 		.grid__item.grid__item_width-4
 		.grid__item.grid__item_width-4
-	+icon('vk','social__link')
-	+icon('twitter','social__link')
-	ul.nav
+	//+icon('vk','social__link')
+	//+icon('twitter','social__link')
+	//ul.nav
 		each link,title in nav.navPages
 			li.nav__item
 				a.nav__link(href=`${link}`) #{title}
-	.block1
-	.block2
-	include ../blocks/social
+	//.block1
+	//.block2
+	//include ../blocks/social
+
+
+
+	.custom-properties
+		.custom-properties__item.custom-properties__item_1 lorem
+			button test
+		.custom-properties__item.custom-properties__item_2 lorem1
+			button test
+	script.
+		const elem = document.querySelector('.custom-properties__item_2');
+		const styles = getComputedStyle(document.querySelector('.custom-properties__item_1'));
+		// Чтение свойства. Не забыть убрать пробелы с помощью trim()
+		const oldColor = styles.getPropertyValue('--main-color').trim();
+		console.log(oldColor);
+		// Запись свойства. 
+		elem.style.setProperty('--main-color', 'green');

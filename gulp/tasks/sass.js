@@ -11,7 +11,8 @@ module.exports = function() {
             //	type: 'px-to-rem',
             //	rootSize: 16
             //}))
-            .pipe($.gp.csso({debug: true}))
+            //.pipe($.gp.csso({debug: true}))
+            .pipe($.gp.csscomb())
             .pipe($.gp.sourcemaps.write())
             .pipe($.gulp.dest($.config.build.css))
             .pipe($.browserSync.stream());
