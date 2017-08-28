@@ -4,47 +4,52 @@ block variables
 	- var title = ['index page title','index page description','index page keywords']
 
 block content
-	//- INCLUDE BLOCKS
-	//- 	include ../blocks/..
-	//.grid
-		.grid-sizer
-		.grid__item.grid__item_width-1
-		.grid__item.grid__item_width-1
-		.grid__item.grid__item_width-1
-		.grid__item.grid__item_width-1
-		.grid__item.grid__item_width-1
-		.grid__item.grid__item_width-1
-		.grid__item.grid__item_width-2
-		.grid__item.grid__item_width-2
-		.grid__item.grid__item_width-2
-		.grid__item.grid__item_width-2
-		.grid__item.grid__item_width-3
-		.grid__item.grid__item_width-3
-		.grid__item.grid__item_width-3
-		.grid__item.grid__item_width-4
-		.grid__item.grid__item_width-4
-	//+icon('vk','social__link')
-	//+icon('twitter','social__link')
-	//ul.nav
-		each link,title in nav.navPages
-			li.nav__item
-				a.nav__link(href=`${link}`) #{title}
-	//.block1
-	//.block2
-	//include ../blocks/social
+	//- .slider
+	//- 	.slider__item(data-value='10', data-diagram='four') lorem1
+	//- 	.slider__item(data-value='15', data-diagram='third') lorem2
+	//- 	.slider__item(data-value='80', data-diagram='second') lorem3
+
+	//- .diagram
+	//- 	span.diagram__title 10
+	//- 	svg.diagram__item(viewbox='0 0 110 110',data-fill='10')
+	//- 		circle.diagram__circle.diagram__first(r='45', cx='50%', cy='50%', fill='none')
+	//- 		circle.diagram__circle.diagram__second(data-fill='0' r='45', cx='50%', cy='50%', transform='rotate(-90 55 55)')
+	//- 		circle.diagram__circle.diagram__third(data-fill='0' r='45', cx='50%', cy='50%', transform='rotate(-90 55 55)')
+	//- 		circle.diagram__circle.diagram__four(data-fill='0' r='45', cx='50%', cy='50%', transform='rotate(-90 55 55)')
+
+	//- ul.list
+	//- 	li.list__item
+	//- 		label.label
+	//- 			input.label__check(type="checkbox")
+	//- 			div.label__text label1
+	//- 	li.list__item
+	//- 		label.label
+	//- 			input.label__check(type="checkbox")
+	//- 			div.label__text label2
+	//- 	li.list__item
+	//- 		label.label
+	//- 			input.label__check(type="checkbox")
+	//- 			div.label__text label3
+	//- 	li.list__item
+	//- 		label.label
+	//- 			input.label__check(type="checkbox")
+	//- 			div.label__text label4
+	//- 	li.list__item
+	//- 		label.label
+	//- 			input.label__check(type="checkbox")
+	//- 			div.label__text label5
+	//- 	li.list__item
+	//- 		label.label
+	//- 			input.label__check(type="checkbox")
+	//- 			div.label__text label6
+	//- h1 Вы выбрали
+	//- .container
+	//- 	span.tooltipper(data-text='Тултип Lorem ipsum dolor sit amet!!!') Наведи на меня
+	//- 	.image(data-before=" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore consectetur perspiciatis beatae ut dolorum ratione, ducimus, ipsa iste rerum ullam.", data-after="bottom sleeeeeeeeeeeide")
+	//- 		img(src="//lorempizza.com/600/600")
 
 
 
-	.custom-properties
-		.custom-properties__item.custom-properties__item_1 lorem
-			button test
-		.custom-properties__item.custom-properties__item_2 lorem1
-			button test
-	script.
-		const elem = document.querySelector('.custom-properties__item_2');
-		const styles = getComputedStyle(document.querySelector('.custom-properties__item_1'));
-		// Чтение свойства. Не забыть убрать пробелы с помощью trim()
-		const oldColor = styles.getPropertyValue('--main-color').trim();
-		console.log(oldColor);
-		// Запись свойства. 
-		elem.style.setProperty('--main-color', 'green');
+	.pie
+	ul.list
+		li.list__item

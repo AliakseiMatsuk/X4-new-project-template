@@ -33,62 +33,23 @@
     <meta property="fb:admins" content="Facebook numberic ID">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="templates/_ares/css/foundation.css">
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css">
     <link rel="stylesheet" href="templates/_ares/css/app.css"><!--[if lt IE 9]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
   </head>
   <body>
-    <!--.grid
-    .grid-sizer
-    .grid__item.grid__item_width-1
-    .grid__item.grid__item_width-1
-    .grid__item.grid__item_width-1
-    .grid__item.grid__item_width-1
-    .grid__item.grid__item_width-1
-    .grid__item.grid__item_width-1
-    .grid__item.grid__item_width-2
-    .grid__item.grid__item_width-2
-    .grid__item.grid__item_width-2
-    .grid__item.grid__item_width-2
-    .grid__item.grid__item_width-3
-    .grid__item.grid__item_width-3
-    .grid__item.grid__item_width-3
-    .grid__item.grid__item_width-4
-    .grid__item.grid__item_width-4
-    -->
-    <!--+icon('vk','social__link')-->
-    <!--+icon('twitter','social__link')-->
-    <!--ul.nav
-    each link,title in nav.navPages
-    	li.nav__item
-    		a.nav__link(href=`${link}`) index page title,index page description,index page keywords
-    -->
-    <!--.block1-->
-    <!--.block2-->
-    <!--include ../blocks/social-->
-    <div class="custom-properties">
-      <div class="custom-properties__item custom-properties__item_1">lorem
-        <button>test</button>
-      </div>
-      <div class="custom-properties__item custom-properties__item_2">lorem1
-        <button>test</button>
-      </div>
-    </div>
-    <script>
-      const elem = document.querySelector('.custom-properties__item_2');
-      const styles = getComputedStyle(document.querySelector('.custom-properties__item_1'));
-      // Чтение свойства. Не забыть убрать пробелы с помощью trim()
-      const oldColor = styles.getPropertyValue('--main-color').trim();
-      console.log(oldColor);
-      // Запись свойства. 
-      elem.style.setProperty('--main-color', 'green');
-    </script>
+    <div class="pie"></div>
+    <ul class="list">
+      <li class="list__item"></li>
+    </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="templates/_ares/js/libs/maskedinput.min.js"></script>
-    <script src="templates/_ares/js/libs/validationEngine.min.js"></script>
-    <script src="templates/_ares/js/libs/validationRulesRu.js"></script>
-    <script src="templates/_ares/js/libs/masonry.pkgd.min.js"></script>
-    <script src="templates/_ares/js/libs/imagesloaded.pkgd.min.js"></script>
-    <script src="templates/_ares/js/libs/svg4everybody.legacy.min.js"></script>
+    <!--script(src=`${ares}/js/libs/maskedinput.min.js`)-->
+    <!--script(src=`${ares}/js/libs/validationEngine.min.js`)-->
+    <!--script(src=`${ares}/js/libs/validationRulesRu.js`)-->
+    <!--script(src=`${ares}/js/libs/masonry.pkgd.min.js`)-->
+    <!--script(src=`${ares}/js/libs/imagesloaded.pkgd.min.js`)-->
+    <!--script(src=`${ares}/js/libs/svg4everybody.legacy.min.js`)-->
+    <script src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script src="templates/_ares/js/app.js"></script>
   </body>
 </html>

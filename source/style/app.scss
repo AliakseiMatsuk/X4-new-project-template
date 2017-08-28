@@ -3,259 +3,129 @@
 @import 'common/mixins';
 @import 'common/fonts';
 @import 'common/base';
-@import 'blocks/**/*';
+@import 'blocks*';
 //@import 'common/sprite-img';
-
-/* .retina-sprite-block{
-  @include retina-sprite($abiatec-group);
-} */
-
-$jeet: ( 
- gutter:0,
- max-width: 1280px,
- layout-direction: LTR, 
- parent-first: false
- );
-@include debug(gray, false);
 .container {
-    @include center(1280px);
-    * {
-        box-sizing: border-box;
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+
+
+@mixin tooltip($color, $backgroundColor, $borderRadius, $transition, $offset, $arrowHeight, $arrowWidth) {
+    position: relative;
+    cursor: pointer;
+    &:hover {
+        &:before,
+        &:after {
+            opacity: 1;
+            left: 50%;
+        }
+    }
+    &:before,
+    &:after {
+        position: absolute;
+        left: -9999px;
+        transform: translateX(-20%);
+
+        opacity: 0;
+
+        transition: opacity $transition;
+    }
+    &:before {
+        content: attr(data-text);
+
+        color: $color;
+        background-color: $backgroundColor;
+
+        bottom: $offset;
+
+        padding: 5px 10px;
+        border-radius: $borderRadius;
+
+        white-space: nowrap;
+        text-transform: lowercase;
+    }
+    &:after {
+        content: '';
+        border-style: solid;
+        border-width: $arrowHeight $arrowWidth/2 0 $arrowWidth/2;
+        border-color: $backgroundColor transparent transparent transparent;
+        bottom: calc(#{$offset} - #{$arrowHeight});
     }
 }
 
-.aside {
-    @include column(2/12);
-    min-height: 700px;
-    background-color: lightgreen;
-    @include tablet() {
-        @include span(1);
-    }
-}
-
-.main {
-    @include column(10/12, $cycle: 2);
-    min-height: 700px;
-    @include tablet() {
-        @include span(1);
-    }
-}
-
-.model {
-    @include center(1062px);
-    margin-bottom: 10px;
+.tooltipper {
+    @include tooltip(#000, #99cd32, 5px, .6s, 150%, 8px, 10px);
+    padding: 5px;
 }
 
 .image {
-    @include column(3/10);
-    min-height: 200px;
-    background: pink;
-    @include desktop() {
-        @include column(5/10);
-    }
-    @include mobile() {
-    		@include stack();
-    }
-}
-
-.desk {
-    @include column(5/10);
-    min-height: 200px;
-    background: lightblue;
-    @include desktop() {
-        @include column(5/10, $cycle: 2);
-    }
-    @include mobile() {
-    		@include stack();
-    }
-}
-
-.buttons {
-	position: relative;
-    @include column(2/10, $cycle: 3);
-    min-height: 200px;
-     background: lightyellow;
-    @include desktop() {
-        @include column(5/10, $cycle: 2);
-    }
-    @include mobile() {
-    		@include stack();
-    }
-}
-.button{
-	@include align();
-}
-.block1 {
-    width: 100px;
-    height: 100px;
-    background-color: #000;
-    @include wide() {
-        background-color: #66ff66;
-    }
-    @include desktop() {
-        background-color: #ff6666;
-    }
-    @include tablet() {
-        background-color: #ffb366;
-    }
-    @include mobile() {
-        background-color: #ffff66;
-    }
-    @include iphone() {
-        background-color: #66ffff;
-    }
-}
-
-.block2 {
-    width: 100px;
-    height: 100px;
-    background-color: #668cff;
-    @include wide() {
-        background-color: #6666ff;
-    }
-    @include desktop() {
-        background-color: #d966ff;
-    }
-    @include tablet() {
-        background-color: #ff6666;
-    }
-    @include mobile() {
-        background-color: #66ffb3;
-    }
-    @include iphone() {
-        background-color: #ffd966;
-    }
-}
-.grid{
-   margin:0 auto;
-   max-width: 1280px;
-}
-.grid-sizer{
-    @include span(1/12);
-}
-.grid__item {
+    cursor: pointer;
     position: relative;
-    height: 200px;
-    &:after{
-        @include align();
-    }
-    &_width-1 {
-        @include span(2/12);
-        background-color: #ffff66;
-        &:after{
-            content: '2/12';
-        }
-        @include tablet() {
-            @include span(3/12);
-            &:after{
-                content: '3/12';
-            }
-        }
-        @include mobile() {
-        @include span(4/12);
-        &:after{
-            content: '4/12';
+    width: 600px;
+    height: 600px;
+    display: inline-block;
+    overflow: hidden;
+    &:hover {
+        &:before,
+        &:after {
+            transform: translateY(0);
+            opacity: 1;
         }
     }
+    &:before,
+    &:after {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: .6s ease-in;
+        font-weight: bold;
+        padding: 0 20px;
+        opacity: 0;
     }
-    &_width-2 {
-        @include span(3/12);
-        background-color: #6666ff;
-        &:after{
-            content: '3/12';
-        }
-        @include tablet() {
-            @include span(4/12);
-            &:after{
-                content: '4/12';
-            }
-        }
-         @include mobile() {
-            @include span(4/12);
-            &:after{
-                content: '4/12';
-            }
-        }
+    &:before {
+        content: attr(data-before);
+        top: 0;
+        transform: translateY(-100%);
+        color: yellowgreen;
     }
-    &_width-3 {
-        @include span(4/12);
-        background-color: #d966ff;
-        &:after{
-            content: '4/12';
-        }
-        @include tablet() {
-            @include span(6/12);
-            &:after{
-                content: '6/12';
-            }
-        }
-         @include mobile() {
-            @include span(8/12);
-            &:after{
-                content: '8/12';
-            }
-        }
-    }
-    &_width-4 {
-        @include span(6/12);
-        &:after{
-            content: '6/12';
-        }
-        background-color: #66ffb3;
-        @include tablet() {
-            @include span(12/12);
-            &:after{
-                content: '12/12';
-            }
-        }
-         @include mobile() {
-            @include span(4/12);
-            &:after{
-                content: '4/12';
-            }
-        }
-    }
-  }
-
-
-
- .social {
-     $_socials: ( 
-     facebook: fb,
-     vk: vk,
-     twitter: tw,
-     youtube: yt,
-     instagram:insta,
-     ok:ok
-     );
-     &__item {}
-     &__link {
-         @each $icon,
-         $label in $_socials {
-             &_#{$label} {
-                 &:after {
-                     content: '#{$icon}';
-                 }
-             }
-         }
-     }
- }
-:root {
-    color:;
-   --main-color: pink;
-}
-.custom-propirties {
- 
-}
-
-.custom-properties__item_1 {
-    --main-color:tomato;
-    color: var(--main-color);
-    button{
-        border-color:var(--main-color);
+    &:after {
+        content: attr(data-after);
+        bottom: 0;
+        transform: translateY(100%);
+        color: red;
     }
 }
 
-.custom-properties__item_2 {
-    background-color: var(--main-color);
+
+
+.pie {
+    margin: 40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: yellowgreen;
+    background-image: linear-gradient(to right, transparent 50%, #655 0);
+    &:before {
+        content: '';
+        display: block;
+        margin-left: 50%;
+        height: 100%;
+        background-color: #655;
+        border-radius: 0 100% 100% 0 / 50%;
+        transform-origin: left;
+        transition: transform .4s;
+        animation: spin 50s linear infinite,
+                   bg 100s step-end infinite;
+        animation-play-state: paused;
+        animation-delay: inherit;
+    }
 }
